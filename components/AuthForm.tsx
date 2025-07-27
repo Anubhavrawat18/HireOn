@@ -8,12 +8,13 @@ import Link from "next/link";
 import { Form } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
+import FormField from "./FormField";
 
 const authFormSchema = (type: FormType) => {
   return z.object({
     name: type === "sign-in" ? z.string().min(3) : z.string().optional(),
     email: z.string().email(),
-    password: z.string().min(3),
+    password: z.string().min(8),
   });
 };
 
@@ -57,9 +58,29 @@ const AuthForm = ({ type }: { type: FormType }) => {
 
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-            {!isSignin && <p>Name</p>}
-            <p>Email</p>
-            <p>Password</p>
+            {!isSignin && (
+              <FormField
+                name="name"
+                control={form.control}
+                label="Name"
+                placeholder="Your Name"
+                type="text"
+              />
+            )}
+            <FormField
+              name="email"
+              control={form.control}
+              label="Email"
+              placeholder="Email"
+              type="email"
+            />
+            <FormField
+              name="password"
+              control={form.control}
+              label="Password"
+              placeholder="Enter your password"
+              type="password"
+            />
             <Button
               className="!w-full !bg-primary-200 !text-dark-100 hover:!bg-primary-200/80 !rounded-full !min-h-10 !font-bold !px-5 cursor-pointer"
               type="submit"
