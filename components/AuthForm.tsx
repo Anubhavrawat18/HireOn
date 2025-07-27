@@ -9,16 +9,19 @@ import { Form } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import FormField from "./FormField";
+import { useRouter } from "next/navigation";
 
 const authFormSchema = (type: FormType) => {
   return z.object({
-    name: type === "sign-in" ? z.string().min(3) : z.string().optional(),
+    name: type === "sign-up" ? z.string().min(3) : z.string().optional(),
     email: z.string().email(),
     password: z.string().min(8),
   });
 };
 
 const AuthForm = ({ type }: { type: FormType }) => {
+  // getting access to the router so we can redirtect the user to the main page after a successful login
+  const router = useRouter();
   // 1. Define your form.
   const formSchema = authFormSchema(type);
   const form = useForm<z.infer<typeof formSchema>>({
@@ -35,9 +38,13 @@ const AuthForm = ({ type }: { type: FormType }) => {
     // finally we write the submit handler
     try {
       if (type === "sign-in") {
-        console.log("SIGN-IN", values);
-      } else {
-        console.log("SIGN-UP", values);
+        toast.success("SignIn successful.");
+        router.push("/");
+        console.log("SIGN-IN SUCCESSFUL", values);
+      } else if (type === "sign-up") {
+        toast.success("Account created successfully. Please sign in.");
+        router.push("/sign-in");
+        console.log("SIGN-UP SUCCESSFUL", values);
       }
     } catch (error) {
       console.log(error);
