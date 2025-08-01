@@ -40,7 +40,6 @@ function page() {
           {dummyInterviews.map((interview) => (
             <InterviewCard {...interview} key={interview.id} />
           ))}
-          <p>New Interview</p>
         </div>
       </section>
     </>
