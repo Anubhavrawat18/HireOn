@@ -14,7 +14,12 @@ const InterviewCard = ({
   const formattedDate = dayjs(
     feedback?.createdAt || createdAt || Date.now()
   ).format("MMM D, YYYY");
-  return <div>InterviewCard</div>;
+  return (
+    <div>
+      InterviewCard
+      <p>testing</p>
+    </div>
+  );
 };
 
 export default InterviewCard;
