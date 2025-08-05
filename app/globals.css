@@ -24,36 +24,17 @@
   --color-dark-300: #242633; */
 
   /* PALLETTE 2 */
---color-primary-100: #e0f7f4;
---color-primary-200: #b2f0e6;
+  --color-primary-100: #e0f7f4;
+  --color-primary-200: #b2f0e6;
 
---color-light-100: #eafaf1;
---color-light-400: #78c2a5;
---color-light-600: #4ea98d;
---color-light-800: #1b3c34;
+  --color-light-100: #eafaf1;
+  --color-light-400: #78c2a5;
+  --color-light-600: #4ea98d;
+  --color-light-800: #1b3c34;
 
---color-dark-100: #081c15;
---color-dark-200: #123524;
---color-dark-300: #1e4635;
-
-/* PALLETTE 3 */
-/* --color-primary-100: #fff8dc;
---color-primary-200: #ffe083;
-
---color-light-100: #f5f5f5;
---color-light-400: #bababa;
---color-light-600: #7a7a7a;
---color-light-800: #333333;
-
---color-dark-100: #0d0d0d;
---color-dark-200: #1a1a1a;
---color-dark-300: #2a2a2a; */
-  /* --color-light-100: #d2fbe0; */
-  /* --color-light-400: #64c88f; */
-  /* --color-light-400: #5e8c7c;
-  --color-light-600: #3aa86b;
-  --color-light-800: #1c3d2c; */
-
+  --color-dark-100: #081c15;
+  --color-dark-200: #123524;
+  --color-dark-300: #1e4635;
 
   --font-mona-sans: "Mona Sans", sans-serif;
 
@@ -62,7 +43,7 @@
 
 :root {
   --radius: 0.625rem;
-  --highlight:	#8cf3ba
+  --highlight: #8cf3ba;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
