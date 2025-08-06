@@ -74,6 +74,5 @@ const InterviewCard = ({
     </div>
   );
 };
-// over
 
 export default InterviewCard;
