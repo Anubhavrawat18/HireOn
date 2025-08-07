@@ -76,4 +76,3 @@ const InterviewCard = ({
 };
 
 export default InterviewCard;
-// continued
